@@ -1,0 +1,47 @@
+<!DOCT<!Doctype html>
+
+<html lang="pl">
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Konwerter</title>
+
+   <script
+
+      src="https://cdn.rawgit.com/showdownjs/showdown/1.6.4/dist/showdown.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+
+      crossorigin="anonymous"></script>
+
+<body>
+
+<h1> Konwerter</h1> 
+
+<textarea id="pole" rows="4" cols="50" id="textarea>"></textarea>
+</br>
+<br>
+
+<button id="run">konwertuj</button>
+
+<h2>Wynik</h2>
+
+<p id="wynik"></p>
+
+<script>
+ $("#run").on("click", function() {
+
+  var text = document.getElementById('pole').value,
+
+      converter = new showdown.Converter();
+
+      html = converter.makeHtml(text);
+
+      $("#wynik").append(html);
+       })
+
+</script>
+</body>
+</html>
